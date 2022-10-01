@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Palette.myColor,
       ),
       home: const MyHomePage(title: 'OLYMPIC BOXING SCORING'),
     );
@@ -52,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     backgroundColor: Colors.black,
                     fontSize: 16.0)),
             Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [ Icon(
               Icons.person,
               // รูปไอคอน
@@ -74,6 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [ Icon(
                 Icons.person,
                 // รูปไอคอน
@@ -102,13 +104,38 @@ class _MyHomePageState extends State<MyHomePage> {
                 Expanded(child: Container(color:Colors.blue ,height: 5,)),
               ],
             ),
+
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(child: Container(color:Colors.red ,height: 5,)),
-                Expanded(child: Container(color:Colors.blue ,height: 5,)),
+
+                Padding(padding:const EdgeInsets.all(30.0),
+
+                  child: ElevatedButton(
+                      onPressed: () {  },
+
+                    child: Icon(
+                    Icons.person,
+                    // รูปไอคอน
+                    size: 25.0,
+                    ),
+                  )),
+                Padding(padding:const EdgeInsets.all(30.0),
+                  child: ElevatedButton(
+                      onPressed: () {  },
+                      child: Icon(
+                        Icons.person,
+                        // รูปไอคอน
+                        size: 25.0,
+                      )),
+
+                ),
+
               ],
+
             ),
+
 
           ],
          
@@ -116,4 +143,21 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+}
+class Palette {
+  static const MaterialColor myColor = const MaterialColor(
+    0xff8b2030,
+    const <int, Color>{
+      50: const Color(0xff7d1d2b), //10%
+      100: const Color(0xff6f1a26), //20%
+      200: const Color(0xff611622), //30%
+      300: const Color(0xff53131d), //40%
+      400: const Color(0xff461018), //50%
+      500: const Color(0xff380d13), //60%
+      600: const Color(0xff2a0a0e), //70%
+      700: const Color(0xff1c060a), //80%
+      800: const Color(0xff0e0305), //90%
+      900: const Color(0xff000000), //100%
+    },
+  );
 }
